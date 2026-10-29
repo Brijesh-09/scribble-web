@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0f0f10;
+  --color-paper: #18181a;
+  --color-raised: #202023;
+  --color-chalk: #f4eeeb;
+  --color-smoke: #9c918e;
+  --color-clay: #d9b8ae;
+  --color-sage: #9bd8a5;
+  --color-amber: #ffc46b;
+  --color-coral: #ff8a7a;
+
+  --font-script: "Reenie Beanie", "Segoe Script", cursive;
+  --font-hand: "Shantell Sans Variable", "Segoe Print", "Comic Sans MS", system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-ink);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-chalk);
+  font-family: var(--font-hand);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-clay);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-clay);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* the page is a sheet of dotted paper, like the scribble pad */
+.paper {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.075) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.font-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-synthesis: none; /* it only has one weight: never fake bold */
+}
+
+/* translucent chrome: content scrolls underneath */
+.glass {
+  background: rgba(24, 24, 26, 0.74);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.16); /* light catching the top edge */
+}
+
+.skip {
+  position: fixed;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  border-radius: 9999px;
+  background: var(--color-chalk);
+  color: var(--color-ink);
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  transition: top 0.15s ease-out;
+}
+.skip:focus {
+  top: 1rem;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background: #1c1c1e;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .glass {
+    background: #1c1c1e;
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
