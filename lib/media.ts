@@ -44,6 +44,7 @@ export const media = define({
   shareFlow: {
     kind: "image",
     ratio: "phone",
+    src: "/media/IMG_2046.jpg",
     alt: "The phone's share sheet with Scribble listed, shown from inside Instagram",
     hint: "Screenshot: the share sheet in Instagram with Scribble in the list.",
   },
@@ -66,7 +67,7 @@ export const media = define({
   shareFeature: {
     kind: "image",
     ratio: "card",
-    src: "/media/IMG_2046.PNG",
+    src: "/media/IMG_2046.jpg",
     alt: "A link shared from a news site, saved with its headline and cover image",
     hint: "Screenshot (4:3): a saved article with its cover image.",
   },
