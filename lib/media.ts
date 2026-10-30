@@ -33,9 +33,9 @@ const define = <T extends Record<string, MediaDef>>(slots: T) => slots;
 export const media = define({
   // the only video on the page
   hero: {
-    kind: "video",
+    kind: "image",
     ratio: "phone",
-    src: "/media/hero.mp4",
+    src: "/media/hero.jpg",
     alt: "Scribble on a phone: a library of saved links, notes and drawings",
     hint: "Your library home screen, scrolling gently. 8 seconds, loops.",
   },
